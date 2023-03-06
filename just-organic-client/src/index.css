@@ -1,0 +1,20 @@
+main {
+  min-height: 80vh;
+}
+
+.card-title {
+  height: 2rem;
+}
+
+h3 {
+  padding: 0.1rem 0;
+}
+
+.rating span {
+  margin: 0.1 rem;
+}
+
+.thumb img {
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
