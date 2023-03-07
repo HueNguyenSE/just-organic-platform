@@ -1,33 +1,72 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-const userSchema = mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    phoneNumber: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    password: {
-        type: String,
-        required: true
-    },
-    isAdmin: {
-        type: Boolean,
-        required: true,
-        default: false
-    }
-}, {
-    timestamps: true,
-})
+const productSchema = mongoose.Schema(
+	{
+		user: {
+			type: mongoose.Schema.Types.ObjectId,
+            required: true,
+            ref: 'User'
+		},
+        name: {
+            type: String,
+            required: true,
+        },
+        origin: {
+            type: String,
+            required: true,
+        },
+        description: {
+            type: String,
+            required: true,
+        },
+		images: {
+			type: Array[String],
+			required: true,
+		},
+		seller: {
+			type: String,
+			required: true,
+		},
+		category: {
+			type: String,
+			required: true,
+		},
+		priceRanges: [
+            {
+                unitPrice: { type: Number, required: true },
+                minQty: { type: Number, required: true }
+            }
+        ],
+        uom: {
+			type: String,
+			required: true,
+		},
+        countInStock: {
+			type: Number,
+			required: true,
+            default: 0
+		},
+        rating: {
+            type: Number,
+            required: true,
+            default: 0
+        },
+        numReviews: {
+			type: Number,
+			required: true,
+            default: 0
+		},
+        reviews: [reviewSchema],
+        shippingArea: {
+			type: String,
+			required: true,
+		}
+	},
+	{
+		timestamps: true,
+	}
+);
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('Product', productSchema);
 
 export default User;
