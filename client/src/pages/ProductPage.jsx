@@ -21,9 +21,9 @@ function ProductPage() {
 		fetchProduct();
 	}, [id]);
 
-	const images = product.images?.map(url => (
-			<div>
-				<img src={url} alt={product.name} ></img>
+	const images = product.images?.map((image, index) => (
+			<div key={index}>
+				<img src={image.url} alt={product.name} ></img>
 			</div>
 	))
 

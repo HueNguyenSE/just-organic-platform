@@ -14,7 +14,7 @@ function Product({ product }) {
 		<div>
 			<Card className='my-3 p-3 rounded'>
 				<Link to={`/products/${product._id}`}>
-					<Card.Img src={product.images[0]} variant='top' />
+					<Card.Img src={product.images[0].url} variant='top' />
 				</Link>
 
 				<Card.Body>

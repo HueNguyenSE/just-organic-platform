@@ -1,11 +1,10 @@
 const products = [
 	{
-		_id: '1',
 		name: 'Organic Avocado',
 		images: [
-			'/images/avocados/1.jpg',
-			'/images/avocados/2.jpg',
-			'/images/avocados/3.jpg',
+			{ url: '/images/avocados/1.jpg' },
+			{ url: '/images/avocados/2.jpg' },
+			{ url: '/images/avocados/3.jpg' },
 		],
 		origin: 'Lam Dong',
 		description:
@@ -33,9 +32,11 @@ const products = [
 		shippingArea: 'Nationwide',
 	},
 	{
-		_id: '2',
 		name: 'Global Gap Custard Apple',
-		images: ['/images/custard-apples/1.jpg', '/images/custard-apples/2.jpg'],
+		images: [
+			{ url: '/images/custard-apples/1.jpg' },
+			{ url: '/images/custard-apples/2.jpg' },
+		],
 		origin: 'Tay Ninh',
 		description:
 			'Our famous custard apples are grown in the area of Ba Den Hill  ',
@@ -62,13 +63,12 @@ const products = [
 		shippingArea: 'Nationwide',
 	},
 	{
-		_id: '3',
 		name: 'Global Gap Custard Apple',
 		images: [
-			'/images/mangos/1.jpg',
-			'/images/mangos/2.jpg',
-			'/images/mangos/3.jpg',
-			'/images/mangos/4.jpg',
+			{ url: '/images/mangos/1.jpg' },
+			{ url: '/images/mangos/2.jpg' },
+			{ url: '/images/mangos/3.jpg' },
+			{ url: '/images/mangos/4.jpg' },
 		],
 		origin: 'Tien Giang',
 		description:
@@ -96,13 +96,12 @@ const products = [
 		shippingArea: 'Nationwide',
 	},
 	{
-		_id: '4',
 		name: 'Green Orange',
 		images: [
-			'/images/oranges/1.jpg',
-			'/images/oranges/2.jpg',
-			'/images/oranges/3.jpg',
-			'/images/oranges/4.jpg',
+			{ url: '/images/oranges/1.jpg' },
+			{ url: '/images/oranges/2.jpg' },
+			{ url: '/images/oranges/3.jpg' },
+			{ url: '/images/oranges/4.jpg' },
 		],
 		origin: 'Cu Chi, Ho Chi Minh City',
 		description:
@@ -130,9 +129,11 @@ const products = [
 		shippingArea: 'Ho Chi Minh city',
 	},
 	{
-		_id: '5',
 		name: 'VietGap Red Seed Water Melon',
-		images: ['/images/watermelons/1.jpg', '/images/watermelons/2.jpg'],
+		images: [
+			{ url: '/images/watermelons/1.jpg' },
+			{ url: '/images/watermelons/2.jpg' },
+		],
 		origin: 'Tien Giang',
 		description:
 			'Our sweet yet mild red water melons are perfect for summer parties, picnics. We only pick the best ones and carefully pack.',
