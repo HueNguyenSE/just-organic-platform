@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
+import { Row, Col, ListGroup, Card, Button } from 'react-bootstrap';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
@@ -25,9 +25,6 @@ function ProductPage(props) {
             minQty = qty;
         }
     } );
-
-
-
 
     const images = product.images.map((image, index) => (
             <div key={index}>

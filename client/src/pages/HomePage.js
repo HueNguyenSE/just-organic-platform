@@ -11,7 +11,6 @@ const HomePage = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             const { data }= await axios.get('/api/products');
-
             setProducts(data);
         }
 
