@@ -45,7 +45,7 @@ const products = [
 		priceRanges: [
 			{
 				minQty: 5,
-				unitPrice: 4.59,
+				unitPrice: 6.00,
 			},
 			{
 				minQty: 20,
@@ -63,7 +63,7 @@ const products = [
 		shippingArea: 'Nationwide',
 	},
 	{
-		name: 'Global Gap Custard Apple',
+		name: 'Global Gap Mango',
 		images: [
 			{ url: '/images/mangos/1.jpg' },
 			{ url: '/images/mangos/2.jpg' },
@@ -78,7 +78,7 @@ const products = [
 		priceRanges: [
 			{
 				minQty: 5,
-				unitPrice: 4.59,
+				unitPrice: 5.96,
 			},
 			{
 				minQty: 20,
@@ -111,7 +111,7 @@ const products = [
 		priceRanges: [
 			{
 				minQty: 5,
-				unitPrice: 4.59,
+				unitPrice: 6.10,
 			},
 			{
 				minQty: 20,
@@ -142,7 +142,7 @@ const products = [
 		priceRanges: [
 			{
 				minQty: 5,
-				unitPrice: 4.59,
+				unitPrice: 5.90,
 			},
 			{
 				minQty: 20,
