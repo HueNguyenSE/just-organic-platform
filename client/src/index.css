@@ -18,3 +18,11 @@ h3 {
   object-fit: cover;
   aspect-ratio: 1 / 1;
 }
+
+button {
+  margin-top: 1rem;
+}
+
+form div {
+  margin-top: 1rem;
+}

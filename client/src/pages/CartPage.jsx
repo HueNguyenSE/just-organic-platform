@@ -12,7 +12,6 @@ import {
 	Card,
 } from 'react-bootstrap';
 import { addToCart, removeFromCart } from '../actions/cartActions';
-import { List } from '@chakra-ui/react';
 
 const CartPage = (props) => {
 	let { id } = useParams();
@@ -26,6 +25,9 @@ const CartPage = (props) => {
 	const dispatch = useDispatch();
 
 	const cart = useSelector((state) => state.cart);
+	const { userInfo } = useSelector((state) => state.userInfo);
+	console.log(cart);
+	console.log(userInfo);
 
 	const { cartItems } = cart;
 
@@ -37,14 +39,18 @@ const CartPage = (props) => {
 
 	const removeFromCartHandler = (id) => {
 		console.log(`Removing ${id} from cart`);
-        dispatch(removeFromCart(id));
+		dispatch(removeFromCart(id));
 	};
 
-    const checkoutHandler = () => {
-        console.log(`Checkout`)
-        let path = 'login?redirect=shipping'
-        navigate(path)
-    };
+
+	const checkoutHandler = (e) => {
+		e.preventDefault();
+		if (userInfo) {
+			navigate('/shipping');
+		} else {
+			navigate('/login');
+		}
+	};
 
 	return (
 		<Row>
@@ -65,9 +71,7 @@ const CartPage = (props) => {
 									<Col md={2}>
 										<Link to={`/products/${item.product}`}>{item.name}</Link>
 									</Col>
-                                    <Col md={2}>
-                                        ${item.price}
-                                    </Col>
+									<Col md={2}>${item.price}</Col>
 									<Col md={2}>
 										<Form.Control
 											type='number'
@@ -101,18 +105,27 @@ const CartPage = (props) => {
 				)}
 			</Col>
 			<Col md={4}>
-                <Card>
-                    <ListGroup variant='flush'>
-                        <ListGroup.Item>
-                            <h2>Subtotal</h2>
-                            ${cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <Button type='button' className='btn-block' disable={cartItems.length === 0} onClick={checkoutHandler}></Button>
-                        </ListGroup.Item>
-                    </ListGroup>
-                </Card>
-            </Col>
+				<Card>
+					<ListGroup variant='flush'>
+						<ListGroup.Item>
+							<h2>Subtotal</h2>$
+							{cartItems
+								.reduce((acc, item) => acc + item.qty * item.price, 0)
+								.toFixed(2)}
+						</ListGroup.Item>
+						<ListGroup.Item>
+							<Button
+								type='button'
+								className='btn-block'
+								disable={cartItems.length === 0}
+								onClick={checkoutHandler}
+							>
+								Process To Checkout
+							</Button>
+						</ListGroup.Item>
+					</ListGroup>
+				</Card>
+			</Col>
 		</Row>
 	);
 };
