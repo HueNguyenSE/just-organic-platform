@@ -13,23 +13,23 @@ function PlaceOrderPage() {
     // tax rate
     const taxRate = 0.1;
 
-    // subtotal including tax
-    cart.subTotal = cart.cartItems.reduce((acc, item) => {
+    // subTotalPrice including tax
+    cart.subTotalPrice = cart.cartItems.reduce((acc, item) => {
         acc += item.price * item.qty
         return acc;
     }, 0)
 
     // tax
-    cart.tax = (cart.subTotal * taxRate).toFixed(2)
+    cart.tax = (cart.subTotalPrice * taxRate).toFixed(2)
 
     // items price excluding tax
-    cart.itemsPrice = (cart.subTotal - cart.tax).toFixed(2);
+    cart.itemsPrice = (cart.subTotalPrice - cart.tax).toFixed(2);
 
     // Caculate shipping
     cart.shippingPrice = 0;
 
     // total
-    cart.total = (cart.subTotal + cart.shippingPrice).toFixed(2);
+    cart.totalPrice = (cart.subTotalPrice + cart.shippingPrice).toFixed(2);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -110,7 +110,7 @@ function PlaceOrderPage() {
                             <ListGroup.Item>
                                 <Row>
                                     <Col>Total</Col>
-                                    <Col>${cart.total}</Col>
+                                    <Col>${cart.totalPrice}</Col>
                                 </Row>
                             </ListGroup.Item>
                             <ListGroup.Item>

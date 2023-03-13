@@ -44,16 +44,6 @@ function PaymentPage() {
 							onChange={(e) => setPaymentMethod(e.target.value)}
 						></Form.Check>
 					</Col>
-					<Col>
-						<Form.Check
-							type='radio'
-							label='PayPal'
-							id='PayPal'
-							name='paymentMethod'
-							value='PayPal'
-							onChange={(e) => setPaymentMethod(e.target.value)}
-						></Form.Check>
-					</Col>
 				</Form.Group>
 				<Button type='submit' variant='primary'>
 					Continue
